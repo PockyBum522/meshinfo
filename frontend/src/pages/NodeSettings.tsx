@@ -1,17 +1,18 @@
 import { Link } from "react-router-dom";
 
 import { HeardBy } from "../components/HeardBy";
-import { useGetNodesQuery, useGetNodeSettingsQuery } from "../slices/apiSlice";
+import {useGetNodesQuery, useGetTelemetryQuery} from "../slices/apiSlice";
 
 export const NodeSettings = () => {
-  const { data: NodeSettings } = useGetNodeSettingsQuery();
+  const { data: telemetry } = useGetTelemetryQuery();
   const { data: nodes } = useGetNodesQuery();
+
 
   if (!nodes) {
     return <div>Loading...</div>;
   }
 
-  if (!NodeSettings) {
+  if (!telemetry) {
     return <div>Loading...</div>;
   }
 
