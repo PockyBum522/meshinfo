@@ -17,123 +17,62 @@ export const NodeSettings = () => {
   }
 
   return (
-    <div>
-      <h5 className="mb-2 text-gray-500">NodeSettings</h5>
-      <h1 className="mb-2 text-xl">NodeSettings</h1>
-      <p className="mb-2">
-        NodeSettings as <HeardBy />
-      </p>
+      <div>
+        <h1 className="mb-2 text-xl">Required Node Settings for Map Visibility</h1>
 
-      <table className="w-full max-w-full table-auto border-collapse border border-gray-500 bg-gray-50 dark:bg-gray-800">
-        <thead>
-          <tr>
-            <th
-              className="p-1 border border-gray-500 bg-gray-400 dark:bg-gray-900"
-              align="left"
-            >
-              Timestamp
-            </th>
-            <th
-              className="p-1 border border-gray-500 bg-gray-400 dark:bg-gray-900"
-              align="left"
-            >
-              From
-            </th>
-            <th
-              className="p-1 border border-gray-500 bg-gray-400 dark:bg-gray-900"
-              align="left"
-            >
-              To
-            </th>
-            <th
-              className="p-1 border border-gray-500 bg-gray-400 dark:bg-gray-900"
-              align="left"
-            >
-              Hops
-            </th>
-            <th
-              className="p-1 border border-gray-500 bg-gray-400 dark:bg-gray-900"
-              align="left"
-            >
-              Route
-            </th>
-            <th
-              className="p-1 border border-gray-500 bg-gray-400 dark:bg-gray-900 text-nowrap"
-              align="left"
-            >
-              Route Hops
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          {NodeSettings?.map((item, index) => {
-            const fnode = nodes[item.from];
-            const tnode = nodes[item.to];
+        <p>
+          <b>Channels > Click on LongFast</b>
+          <ul>
+            <li>Uplink Enabled: True</li>
+            <li>Downlink Enabled: Recommended False</li>
+            <li>Position Enabled: True</li>
+            <li>Precise Location: False</li>
+            <li>Bottom slider: 1194ft is the *most* accurate setting that will still show up on any map. This is a
+              meshtastic limitation.
+            </li>
+            <br/>
+            <li>Be sure to click send to save after each page/section</li>
+          </ul>
 
-            return (
-              // eslint-disable-next-line react/no-array-index-key
-              <tr key={`traceroute-${index}`}>
-                <td className="p-1 border border-gray-400 text-nowrap">
-                  {new Date(item.timestamp * 1000).toLocaleString()}
-                </td>
-                <td className="p-1 border border-gray-400">
-                  {fnode ? (
-                    <Link
-                      to={`/nodes/${item.from}`}
-                      className="dark:text-indigo-400 dark:visited:text-indigo-400 dark:hover:text-indigo-500"
-                    >
-                      {fnode.shortname}
-                    </Link>
-                  ) : (
-                    <span className="text-gray-500">UNK</span>
-                  )}
-                </td>
-                <td className="p-1 border border-gray-400">
-                  {tnode ? (
-                    <Link
-                      to={`/nodes/${item.to}`}
-                      className="dark:text-indigo-400 dark:visited:text-indigo-400 dark:hover:text-indigo-500"
-                    >
-                      {tnode.shortname}
-                    </Link>
-                  ) : (
-                    <span className="text-gray-500">UNK</span>
-                  )}
-                </td>
-                <td className="p-1 border border-gray-400" align="center">
-                  {item.hops_away}
-                </td>
-                <td className="p-1 border border-gray-400">
-                  {item.route_ids?.map((hop, hopIndex) => {
-                    const hnode = nodes[hop];
-                    return (
-                      // eslint-disable-next-line react/no-array-index-key
-                      <span key={`hop-${hopIndex}`}>
-                        {hnode ? (
-                          <Link
-                            to={`/nodes/${hop}`}
-                            className="dark:text-indigo-400 dark:visited:text-indigo-400 dark:hover:text-indigo-500"
-                          >
-                            {hnode.shortname}
-                          </Link>
-                        ) : (
-                          <span className="text-gray-500">UNK</span>
-                        )}
-                        {hopIndex < (item.route_ids ?? []).length - 1 && (
-                          <span className="text-gray-300"> &gt; </span>
-                        )}
-                      </span>
-                    );
-                  })}
-                </td>
-                <td className="p-1 border border-gray-400" align="center">
-                  {item.route.length}
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
-    </div>
+          <b>Position:</b>
+
+          <ul>
+            <li>Set your lat/long/alt and set "Used fixed position" to True if your node doesn't have GPS or is
+              stationary
+            </li>
+            <li>Otherwise set your GPS settings.</li>
+
+          </ul>
+
+          <b>Lora:</b>
+          <ul>
+            <li>OK to MQTT: True</li>
+          </ul>
+
+          <b>MQTT:</b>
+          <ul>
+            <li>Address: mqtt.meshtastic.org</li>
+            <li>Username: meshdev</li>
+            <li>Password: large4cats</li>
+            <br/>
+            <li>Encryption enabled: True</li>
+            <li>JSON output enabled: False</li>
+            <li>Root topic: msh/US/FL/anything</li>
+            <ul>
+              (Typical options to replace 'anything' above are: orl, jax, etc...As long as your root topic starts with
+              msh/US/FL then you're good.)
+            </ul>
+            <li>Proxy to client enabled: True if your board isn't directly hooked to Wi-Fi or Ethernet.</li>
+            <li>Map reporting: True</li>
+            <li>Precise location: False</li>
+            <br/>
+            <li>Slider at the bottom: 1194 feet is the *most* accurate you can set things to and still have your node
+              show up on maps.
+            </li>
+            <br/>
+            <li>Map reporting interval: 900</li>
+          </ul>
+        </p>
+      </div>
   );
 };
