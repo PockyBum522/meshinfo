@@ -98,17 +98,17 @@ export const Menu = ({
             <h3 className="font-bold">Mesh</h3>
             <div className="mb-1">
               <Link
-                to="chat"
-                relative="path"
-                className="dark:text-indigo-400 dark:visited:text-indigo-400 dark:hover:text-indigo-500"
+                  to="chat"
+                  relative="path"
+                  className="dark:text-indigo-400 dark:visited:text-indigo-400 dark:hover:text-indigo-500"
               >
                 <img
-                  src={`${import.meta.env.BASE_URL}images/icons/chat.svg`}
-                  width="20"
-                  height="20"
-                  className="inline-block mr-2 dark:invert"
-                  alt="chat icon"
-                  style={{ verticalAlign: "middle" }}
+                    src={`${import.meta.env.BASE_URL}images/icons/chat.svg`}
+                    width="20"
+                    height="20"
+                    className="inline-block mr-2 dark:invert"
+                    alt="chat icon"
+                    style={{verticalAlign: "middle"}}
                 />
                 Chat
               </Link>
@@ -128,98 +128,114 @@ export const Menu = ({
             </div> */}
             <div className="mb-1">
               <Link
-                to="map"
-                className="dark:text-indigo-400 dark:visited:text-indigo-400 dark:hover:text-indigo-500"
+                  to="map"
+                  className="dark:text-indigo-400 dark:visited:text-indigo-400 dark:hover:text-indigo-500"
               >
                 <img
-                  src={`${import.meta.env.BASE_URL}images/icons/map.svg`}
-                  width="20"
-                  height="20"
-                  className="inline-block mr-2 dark:invert"
-                  alt="map icon"
-                  style={{ verticalAlign: "middle" }}
+                    src={`${import.meta.env.BASE_URL}images/icons/map.svg`}
+                    width="20"
+                    height="20"
+                    className="inline-block mr-2 dark:invert"
+                    alt="map icon"
+                    style={{verticalAlign: "middle"}}
                 />
                 Map
               </Link>
             </div>
             <div className="mb-1">
               <Link
-                to="nodes"
-                className="dark:text-indigo-400 dark:visited:text-indigo-400 dark:hover:text-indigo-500"
+                  to="nodes"
+                  className="dark:text-indigo-400 dark:visited:text-indigo-400 dark:hover:text-indigo-500"
               >
                 <img
-                  src={`${import.meta.env.BASE_URL}images/icons/node.svg`}
-                  width="20"
-                  height="20"
-                  className="inline-block mr-2 dark:invert"
-                  alt="node icon"
-                  style={{ verticalAlign: "middle" }}
+                    src={`${import.meta.env.BASE_URL}images/icons/node.svg`}
+                    width="20"
+                    height="20"
+                    className="inline-block mr-2 dark:invert"
+                    alt="node icon"
+                    style={{verticalAlign: "middle"}}
                 />
                 Nodes
               </Link>
             </div>
             <div className="mb-1">
               <Link
-                to="neighbors"
-                className="dark:text-indigo-400 dark:visited:text-indigo-400 dark:hover:text-indigo-500"
+                  to="neighbors"
+                  className="dark:text-indigo-400 dark:visited:text-indigo-400 dark:hover:text-indigo-500"
               >
                 <img
-                  src={`${import.meta.env.BASE_URL}images/icons/neighbors.svg`}
-                  width="20"
-                  height="20"
-                  className="inline-block mr-2 dark:invert"
-                  alt="neighbors icon"
-                  style={{ verticalAlign: "middle" }}
+                    src={`${import.meta.env.BASE_URL}images/icons/neighbors.svg`}
+                    width="20"
+                    height="20"
+                    className="inline-block mr-2 dark:invert"
+                    alt="neighbors icon"
+                    style={{verticalAlign: "middle"}}
                 />
                 Node Neighbors
               </Link>
             </div>
             <div className="mb-1">
               <Link
-                to="stats"
-                className="dark:text-indigo-400 dark:visited:text-indigo-400 dark:hover:text-indigo-500"
+                  to="stats"
+                  className="dark:text-indigo-400 dark:visited:text-indigo-400 dark:hover:text-indigo-500"
               >
                 <img
-                  src={`${import.meta.env.BASE_URL}images/icons/stats.svg`}
-                  width="20"
-                  height="20"
-                  className="inline-block mr-2 dark:invert"
-                  alt="stats icon"
-                  style={{ verticalAlign: "middle" }}
+                    src={`${import.meta.env.BASE_URL}images/icons/stats.svg`}
+                    width="20"
+                    height="20"
+                    className="inline-block mr-2 dark:invert"
+                    alt="stats icon"
+                    style={{verticalAlign: "middle"}}
                 />
                 Stats
               </Link>
             </div>
             <div className="mb-1">
               <Link
-                to="telemetry"
-                className="dark:text-indigo-400 dark:visited:text-indigo-400 dark:hover:text-indigo-500"
+                  to="telemetry"
+                  className="dark:text-indigo-400 dark:visited:text-indigo-400 dark:hover:text-indigo-500"
               >
                 <img
-                  src={`${import.meta.env.BASE_URL}images/icons/telemetry.svg`}
-                  width="20"
-                  height="20"
-                  className="inline-block mr-2 dark:invert"
-                  alt="telemetry icon"
-                  style={{ verticalAlign: "middle" }}
+                    src={`${import.meta.env.BASE_URL}images/icons/telemetry.svg`}
+                    width="20"
+                    height="20"
+                    className="inline-block mr-2 dark:invert"
+                    alt="telemetry icon"
+                    style={{verticalAlign: "middle"}}
                 />
                 Telemetry
               </Link>
             </div>
             <div className="mb-1">
               <Link
-                to="traceroutes"
-                className="dark:text-indigo-400 dark:visited:text-indigo-400 dark:hover:text-indigo-500"
+                  to="traceroutes"
+                  className="dark:text-indigo-400 dark:visited:text-indigo-400 dark:hover:text-indigo-500"
               >
                 <img
-                  src={`${import.meta.env.BASE_URL}images/icons/route2.svg`}
-                  width="20"
-                  height="20"
-                  className="inline-block mr-2 dark:invert"
-                  alt="traceroutes icon"
-                  style={{ verticalAlign: "middle" }}
+                    src={`${import.meta.env.BASE_URL}images/icons/route2.svg`}
+                    width="20"
+                    height="20"
+                    className="inline-block mr-2 dark:invert"
+                    alt="traceroutes icon"
+                    style={{verticalAlign: "middle"}}
                 />
                 Traceroutes
+              </Link>
+            </div>
+            <div className="mb-1">
+              <Link
+                  to="nodesettings"
+                  className="dark:text-indigo-400 dark:visited:text-indigo-400 dark:hover:text-indigo-500"
+              >
+                <img
+                    src={`${import.meta.env.BASE_URL}images/icons/route2.svg`}
+                    width="20"
+                    height="20"
+                    className="inline-block mr-2 dark:invert"
+                    alt="node settings icon"
+                    style={{verticalAlign: "middle"}}
+                />
+                Required Node Settings
               </Link>
             </div>
           </nav>
@@ -228,16 +244,16 @@ export const Menu = ({
             <h3 className="font-bold">Logs</h3>
             <div className="mb-1">
               <Link
-                to="mesh-log"
-                className="dark:text-indigo-400 dark:visited:text-indigo-400 dark:hover:text-indigo-500"
+                  to="mesh-log"
+                  className="dark:text-indigo-400 dark:visited:text-indigo-400 dark:hover:text-indigo-500"
               >
                 Mesh Messages
               </Link>
             </div>
             <div className="mb-1">
               <Link
-                to="mqtt-log"
-                className="dark:text-indigo-400 dark:visited:text-indigo-400 dark:hover:text-indigo-500"
+                  to="mqtt-log"
+                  className="dark:text-indigo-400 dark:visited:text-indigo-400 dark:hover:text-indigo-500"
               >
                 MQTT Messages
               </Link>
