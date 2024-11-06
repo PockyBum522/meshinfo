@@ -247,6 +247,7 @@ class StaticHTMLRenderer:
       config=self.config,
       nodes=self.data.nodes,
       nodesettings=self.data.nodesettings,
+      traceroutes=self.data.traceroutes,
       datetime=datetime.datetime,
       zoneinfo=ZoneInfo(self.config['server']['timezone']),
       timestamp=datetime.datetime.now(ZoneInfo(self.config['server']['timezone']))
