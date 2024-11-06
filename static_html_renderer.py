@@ -36,6 +36,7 @@ class StaticHTMLRenderer:
     self.render_stats()
     self.render_telemetry()
     self.render_traceroutes()
+    self.render_nodesettings()
     print("Done rendering static HTML files")
 
   def save_file(self, filename, content):
@@ -235,6 +236,17 @@ class StaticHTMLRenderer:
       config=self.config,
       nodes=self.data.nodes,
       traceroutes=self.data.traceroutes,
+      datetime=datetime.datetime,
+      zoneinfo=ZoneInfo(self.config['server']['timezone']),
+      timestamp=datetime.datetime.now(ZoneInfo(self.config['server']['timezone']))
+    )
+
+  def render_nodesettings(self):
+    self.render_html_and_save(
+      'nodesettings.html',
+      config=self.config,
+      nodes=self.data.nodes,
+      nodesettings=self.data.nodesettings,
       datetime=datetime.datetime,
       zoneinfo=ZoneInfo(self.config['server']['timezone']),
       timestamp=datetime.datetime.now(ZoneInfo(self.config['server']['timezone']))
