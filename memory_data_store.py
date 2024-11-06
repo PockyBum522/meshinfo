@@ -34,6 +34,7 @@ class MemoryDataStore:
     self.telemetry_by_node: dict = {}
     self.traceroutes: list = []
     self.traceroutes_by_node: dict = {}
+    self.nodesettings: list = []
 
   def update(self, key, value):
     self.__dict__[key] = value
