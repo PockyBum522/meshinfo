@@ -13,6 +13,7 @@ import { Nodes } from "./pages/Nodes";
 import { Stats } from "./pages/Stats";
 import { Telemetry } from "./pages/Telemetry";
 import { Traceroutes } from "./pages/Traceroutes";
+import { NodeSettings } from "./pages/NodeSettings";
 
 export const router = createBrowserRouter(
   [
@@ -34,6 +35,7 @@ export const router = createBrowserRouter(
         { path: "/stats", element: <Stats /> },
         { path: "/telemetry", element: <Telemetry /> },
         { path: "/traceroutes", element: <Traceroutes /> },
+        { path: "/nodesettings", element: <NodeSettings /> },
         { path: "/mesh-log", element: <MeshLog /> },
         { path: "/mqtt-log", element: <MqttLog /> },
       ],

@@ -1,26 +1,26 @@
 import { Link } from "react-router-dom";
 
 import { HeardBy } from "../components/HeardBy";
-import { useGetNodesQuery, useGetTraceroutesQuery } from "../slices/apiSlice";
+import { useGetNodesQuery, useGetNodeSettingsQuery } from "../slices/apiSlice";
 
-export const Traceroutes = () => {
-  const { data: traceroutes } = useGetTraceroutesQuery();
+export const NodeSettings = () => {
+  const { data: NodeSettings } = useGetNodeSettingsQuery();
   const { data: nodes } = useGetNodesQuery();
 
   if (!nodes) {
     return <div>Loading...</div>;
   }
 
-  if (!traceroutes) {
+  if (!NodeSettings) {
     return <div>Loading...</div>;
   }
 
   return (
     <div>
-      <h5 className="mb-2 text-gray-500">Traceroutes</h5>
-      <h1 className="mb-2 text-xl">Traceroutes</h1>
+      <h5 className="mb-2 text-gray-500">NodeSettings</h5>
+      <h1 className="mb-2 text-xl">NodeSettings</h1>
       <p className="mb-2">
-        Traceroutes as <HeardBy />
+        NodeSettings as <HeardBy />
       </p>
 
       <table className="w-full max-w-full table-auto border-collapse border border-gray-500 bg-gray-50 dark:bg-gray-800">
@@ -65,7 +65,7 @@ export const Traceroutes = () => {
           </tr>
         </thead>
         <tbody>
-          {traceroutes?.map((item, index) => {
+          {NodeSettings?.map((item, index) => {
             const fnode = nodes[item.from];
             const tnode = nodes[item.to];
 
