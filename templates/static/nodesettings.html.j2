@@ -3,60 +3,59 @@
 {% block title %}Traceroutes{% endblock %}
 
 {% block content %}
-  <h5 class="mb-2 text-gray-500">Traceroutes</h5>
-  <h1 class="mb-2 text-xl">Traceroutes</h1>
-  <p class="mb-2">
-    Traceroutes as seen by <a href="node_{{ config['server']['node_id'] }}.html">{{ config['server']['node_id'] }}</a> ({{ config['server']['node_id'] }}).
-  </p>
+    <h1 className="mb-2 text-xl">Required Node Settings for Map Visibility</h1>
 
-  <table class="w-full max-w-full table-auto border-collapse border border-gray-500 bg-gray-50">
-    <thead>
-      <tr>
-        <th class="p-1 border border-gray-500 bg-gray-400" align=left>Timestamp</th>
-        <th class="p-1 border border-gray-500 bg-gray-400" align=left>From</th>
-        <th class="p-1 border border-gray-500 bg-gray-400" align=left>To</th>
-        <th class="p-1 border border-gray-500 bg-gray-400" align=left>Hops</th>
-        <th class="p-1 border border-gray-500 bg-gray-400" align=left>Route</th>
-        <th class="p-1 border border-gray-500 bg-gray-400 text-nowrap" align=left>Route Hops</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for item in traceroutes %}
-        <tr>
-          <td class="p-1 border border-gray-400 text-nowrap">{{ datetime.fromtimestamp(item.timestamp).astimezone(zoneinfo) }}</td>
-          <td class="p-1 border border-gray-400">
-            {% set fnode = nodes[item.from] %}
-            {% if fnode %}
-              <a href="node_{{ item.from }}.html">{{ fnode.shortname }}</a>
-            {% else %}
-              <span class="text-gray-500">UNK</span>
-            {% endif %}
-          </td>
-          <td class="p-1 border border-gray-400">
-            {% set tnode = nodes[item.to] %}
-            {% if tnode %}
-              <a href="node_{{ item.to }}.html">{{ tnode.shortname }}</a>
-            {% else %}
-              <span class="text-gray-500">UNK</span>
-            {% endif %}
-          </td>
-          <td class="p-1 border border-gray-400" align=center>{{ item.hops_away }}</td>
-          <td class="p-1 border border-gray-400">
-            {% for hop in item.route_ids %}
-              {% set hnode = nodes[hop] %}
-              {% if hnode %}
-                <a href="node_{{ hop }}.html">{{ hnode.shortname }}</a>
-              {% else %}
-                <span class="text-gray-500">UNK</span>
-              {% endif %}
-              {% if not loop.last %}
-                <span class="text-gray-300"> > </span>
-              {% endif %}
-            {% endfor %}
-          </td>
-          <td class="p-1 border border-gray-400" align=center>{{ item.route | length }}</td>
-        </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+    <p>
+      <b>Channels > Click on LongFast</b>
+      <ul>
+        <li>Uplink Enabled: True</li>
+        <li>Downlink Enabled: Recommended False</li>
+        <li>Position Enabled: True</li>
+        <li>Precise Location: False</li>
+        <li>Bottom slider: 1194ft is the *most* accurate setting that will still show up on any map. This is a
+          meshtastic limitation.
+        </li>
+        <br/>
+        <li>Be sure to click send to save after each page/section</li>
+      </ul>
+
+      <b>Position:</b>
+
+      <ul>
+        <li>Set your lat/long/alt and set "Used fixed position" to True if your node doesn't have GPS or is
+          stationary
+        </li>
+        <li>Otherwise set your GPS settings.</li>
+
+      </ul>
+
+      <b>Lora:</b>
+      <ul>
+        <li>OK to MQTT: True</li>
+      </ul>
+
+      <b>MQTT:</b>
+      <ul>
+        <li>Address: mqtt.meshtastic.org</li>
+        <li>Username: meshdev</li>
+        <li>Password: large4cats</li>
+        <br/>
+        <li>Encryption enabled: True</li>
+        <li>JSON output enabled: False</li>
+        <li>Root topic: msh/US/FL/anything</li>
+        <ul>
+          (Typical options to replace 'anything' above are: orl, jax, etc...As long as your root topic starts with
+          msh/US/FL then you're good.)
+        </ul>
+        <li>Proxy to client enabled: True if your board isn't directly hooked to Wi-Fi or Ethernet.</li>
+        <li>Map reporting: True</li>
+        <li>Precise location: False</li>
+        <br/>
+        <li>Slider at the bottom: 1194 feet is the *most* accurate you can set things to and still have your node
+          show up on maps.
+        </li>
+        <br/>
+        <li>Map reporting interval: 900</li>
+      </ul>
+    </p>
 {% endblock %}
