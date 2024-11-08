@@ -228,7 +228,7 @@ export const Menu = ({
                   className="dark:text-indigo-400 dark:visited:text-indigo-400 dark:hover:text-indigo-500"
               >
                 <img
-                    src={`${import.meta.env.BASE_URL}images/icons/route2.svg`}
+                    src={`${import.meta.env.BASE_URL}images/icons/cog.svg`}
                     width="20"
                     height="20"
                     className="inline-block mr-2 dark:invert"
